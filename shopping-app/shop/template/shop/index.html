@@ -1,0 +1,44 @@
+{% extends 'shop/layouts/main.html' %}
+{% load humanize %}
+{% block title %}
+  Shopkart | Online Shopping
+{% endblock title %}
+{% block content%}
+{% include 'shop/inc/slider.html'%}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,74.7C480,64,600,64,720,69.3C840,75,960,85,1080,80C1200,75,1320,53,1380,42.7L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+<section class="py-4 my-3">
+   <div class="container" style="margin-top: 30px;padding:10px; margin-top:-229px;">
+      <div class="row">
+        <div class="col-12">
+          {% include 'shop/inc/message.html'%}
+          <h1 style="margin-top:50px;color:black;font-weight:700;">Latest Trending Products 
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" fill-rule="evenodd" d="M464 144c8.837 0 16 7.163 16 16v304c0 8.836-7.163 16-16 16H160c-8.837 0-16-7.164-16-16V160c0-8.837 7.163-16 16-16zm-52 68H212v200h200zm493.333 87.686c6.248 6.248 6.248 16.379 0 22.627l-181.02 181.02c-6.248 6.248-16.378 6.248-22.627 0l-181.019-181.02c-6.248-6.248-6.248-16.379 0-22.627l181.02-181.02c6.248-6.248 16.378-6.248 22.627 0zm-84.853 11.313L713 203.52L605.52 311L713 418.48zM464 544c8.837 0 16 7.164 16 16v304c0 8.837-7.163 16-16 16H160c-8.837 0-16-7.163-16-16V560c0-8.836 7.163-16 16-16zm-52 68H212v200h200zm452-68c8.837 0 16 7.164 16 16v304c0 8.837-7.163 16-16 16H560c-8.837 0-16-7.163-16-16V560c0-8.836 7.163-16 16-16zm-52 68H612v200h200z"/></svg>
+          <hr style="border:1px solid black"/>
+        </div> 
+        {% for item in products %} 
+        <div class="col-md-4 col-lg-3">
+          <div class="container">
+            <div class="row flex-row">
+              <div class="card my-4" id="card-b" style="padding-bottom: 20px;padding-top:10px;border:1px solid black;" id="card-b">
+              <a href="{% url 'product_details' item.catagory item.name %}" style="text-align: center;">
+              <img src="{{item.product_image.url}}" class="card-image-top img-fluid rounded-top" id="prod-img" alt="Products" style="height:240px;width:290px;padding:5px;border-radius:8px;width:240px;"/>
+              <div><hr style="border:1px solid #4d4e4e;"/></div>
+              </a>
+              <a href="{% url 'product_details' item.catagory item.name %}">
+              <div class="card-body">
+                  <h5 class="card-title text-primary" id="item-name" style="font-weight:bold;">{{item.name}}</h5>
+                  <p class="card-text" style=" margin-top:20px;">
+                      <span class="float-start" id="og-price"><s>Rs.{{item.original_price | stringformat:'d' | intcomma}}</s></span>
+                      <span class="float-end" id="sel-price" style="font-weight: bold;">Rs.{{item.selling_price | stringformat:'d' | intcomma}}</span>
+                  </p>
+              </div>
+              </a>
+          </div>
+        </div>
+        </div>
+      </div>
+{% endfor %}
+      </div>
+   </div>
+</section>
+{% endblock content%}

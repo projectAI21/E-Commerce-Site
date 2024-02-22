@@ -1,0 +1,42 @@
+{% extends 'shop/layouts/main.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+  Shopkart | Online Shopping
+{% endblock title %}
+{% block content%}
+<section class=" py-40 my-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">{{catagory_name}} Products</h4>
+                <hr style="border-color: #000000;"/>
+                <nav aria-label="breadcrumb" style="margin-top: 20px;">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{% url 'home'%}" style="color: rgb(221, 58, 21); font-weight:bold;">Home</a></li>
+                      <li class="breadcrumb-item" style="font-weight: bold;">{{catagory_name}} Collections</li>
+                    </ol>
+                </nav>
+            </div>
+            {% for item in products %}
+            <div class="col-md-4 col-lg-3">
+                <div class="card my-4" style="padding-bottom: 20px;padding-top:10px;border:1px solid black;" id="card-b">
+                    <a href="{% url 'product_details' catagory_name item.name%}" style="text-align: center;">
+                    <img src="{{item.product_image.url}}" class="card-image-top img-fluid rounded-top" id="prod-img" alt="Products" style="height:240px;width:240px;padding:5px;border-radius:8px;"/>
+                    <div><hr style="border:1px solid #4d4e4e;"/></div>
+                    </a>
+                    <a href="{% url 'product_details' catagory_name item.name%}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary" style="font-weight:bold;">{{item.name}}</h5>
+                        <p class="card-text" style=" margin-top:20px;">
+                            <span class="float-start"><s>Rs.{{item.original_price | stringformat:'d' | intcomma}}</s></span>
+                            <span class="float-end" style="font-weight: bold;">Rs.{{item.selling_price | stringformat:'d' | intcomma}}</span>
+                        </p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+    {% endfor %}      
+    </div>
+   </div></section>
+{% endblock content%}

@@ -1,0 +1,14 @@
+{% for msg in messages %}
+<div class="alert alert-info alert-dismissible fade show primary text" role="alert" style="border-radius:12px;margin-top: 30px;background-color:#f9f9e1;font-weight:700;border:2px solid rgb(15, 16, 15);" id="message">
+  <div style="color:rgb(0, 0, 0);font-weight:700;">
+  {{msg | safe}}
+  <button type="button" class="btn-close btn-white" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+<script>
+  const msg = document.getElementById('message');
+  setTimeout(()=>{
+    msg.style.display='none';
+  }, 10000)
+</script>
+{% endfor %}
