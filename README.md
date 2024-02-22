@@ -1,7 +1,7 @@
 # E-Commerce-Site
 **Web Application** 
 
-Welcome to our E-Commerce Website project! This web application is designed to provide users with a seamless shopping experience while offering robust backend functionalities for efficient management.
+Welcome to My E-Commerce Website project! This web application is designed to provide users with a seamless shopping experience while offering robust backend functionalities for efficient management.
 
 # Features
 **Dynamic User Interface**: Utilizing HTML, CSS, and JavaScript, we've created an intuitive and visually appealing frontend interface for easy navigation and interaction.
