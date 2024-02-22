@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Noto+Sans:wght@300;400;500;700&display=swap');
+html{
+    font-size: 14px;
+    background-color: #e9e5ff;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+body{
+    font-family: 'Noto Sans', 'sans-serif';
+    background-image: url('C:\Users\Vikram\OneDrive\Desktop\shopkart\static\images\background-img.jpg');
+
+}
+
+.carousel-item img{
+    object-fit: cover;
+    object-position: top;
+    height: 450px;
+    overflow: hidden;
+}
+.float-start, .old_price{
+    font-weight: bold;
+    color: black;
+    padding:5px;
+}
+
+.float-end, .new_price{
+    font-weight: bold;
+    background-color: rgb(6, 174, 84);
+    border-radius: 4px;
+    padding: 5px;
+    color: white;
+}
+
+@media screen and (max-width:991px) {
+    #cont1{
+        padding:30px;
+    }
+}
+.pic-box{
+   position: relative;
+}
+.hot{
+   background-color: orangered;
+   color: rgb(255, 255, 255);
+   font-weight: bold;
+   display: inline-block;
+   border-radius: 3.5px;
+   padding: 5px;
+   z-index: 10;
+   top: 14px;
+   right: 165px;
+   position:absolute;
+   text-align: center;
+   font-size: 12px;
+   box-shadow: 0 0 4px black;  
+}
+
+@media screen and (max-width: 1200px) {
+    .pic-box img{
+        width: 260px;
+        margin-left: -20px;
+        height: 20px;
+    }
+    .hot{
+        right: 40px;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .hot{
+        right: 60px;
+    }
+}
+.pic-box img:hover{
+  
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 8px solid black;
+}
+
+@media (min-width:1420px) {
+    #card-b:hover {
+      transform: scale(1.1);
+      transition: all .2s ease-in-out;
+      width: 300px;
+      box-shadow: 0 4px 8px rgb(0, 0, 0);
+      border: none;
+    }
+  }
+
+@media (max-width:1200px) {
+     #item-name, #og-price, #sel-price{
+       text-align: center;
+       font-size: 13px;
+       margin-top: -5px;
+    }
+}
+
+ a.alreadyuser:hover{
+   background-color:black;
+   color: white;
+}
+.custom-shape-divider-bottom-1707411972 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+hr{
+    margin-top: 20px;
+}
